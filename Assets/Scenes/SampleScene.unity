@@ -1013,7 +1013,7 @@ Transform:
   m_GameObject: {fileID: 908004218}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: -0.25, y: 5.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1128,8 +1128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   targetA: {fileID: 746771170}
   targetB: {fileID: 908004219}
-  speed: 4
-  waitTime: 2
+  speed: 1
+  waitTime: 0.5
 --- !u!111 &1036991708
 Animation:
   m_ObjectHideFlags: 0
@@ -1140,8 +1140,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: 6377fa18a9df0f04c9ad4a32b8cd9e7f, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 9cd81786a54daab48b4b5aa0615667da, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1159,10 +1158,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1617,7 +1616,7 @@ Transform:
   m_GameObject: {fileID: 1516842002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -7,31 +7,43 @@ public class MovingTargetValues : MonoBehaviour
     [SerializeField] float waitTime;
     float _currentTime;
     private Animation _animation;
+    AnimationClip _clip;
+    
 
     private void Start()
     {
-        AnimationClip clip = new  AnimationClip();
+        _clip = new  AnimationClip();
         _animation = GetComponent<Animation>();
-        _animation.clip = clip;
-        Keyframe[] keys = new Keyframe[4];
-        keys[0] = new Keyframe(_currentTime,targetA.position.x); //move to target A
+        _animation.clip = _clip;
+        _clip.legacy = true;
+        
+        AnimationCurve curveX = new  AnimationCurve();
+        
+        curveX.AddKey(_currentTime,targetA.position.x); //move to target A
         _currentTime += speed; //move time
-        keys[1] = new Keyframe(_currentTime,targetA.position.x); //target A
+        curveX.AddKey(_currentTime,targetA.position.x); //target A
         _currentTime += waitTime; //wait time
-        keys[2] = new Keyframe(_currentTime,targetB.position.x); //move to target B
+        curveX.AddKey(_currentTime,targetB.position.x); //move to target B
         _currentTime += speed; //move time
-        keys[3] = new Keyframe(_currentTime,targetB.position.x); //target B
-        clip.SetCurve("Platform", typeof(Transform), "position.x", new AnimationCurve(keys));
-        keys[0] = new Keyframe(_currentTime,targetA.position.y); //move to target A
+        curveX.AddKey(_currentTime,targetB.position.x); //target B
+
+        _currentTime = 0f;
+        
+        AnimationCurve curveY = new  AnimationCurve();
+        curveY.AddKey(_currentTime,targetA.position.y); //move to target A
         _currentTime += speed; //move time
-        keys[1] = new Keyframe(_currentTime,targetA.position.y); //target A
+        curveY.AddKey(_currentTime,targetA.position.y); //target A
         _currentTime += waitTime; //wait time
-        keys[2] = new Keyframe(_currentTime,targetB.position.y); //move to target B
+        curveY.AddKey(_currentTime,targetB.position.y); //move to target B
         _currentTime += speed; //move time
-        keys[3] = new Keyframe(_currentTime,targetB.position.y); //target B
-        clip.SetCurve("Platform", typeof(Transform), "position.y", new AnimationCurve(keys));
-        clip.legacy = true;
-        _animation.AddClip(clip, "PlatformAnimation");
+        curveY.AddKey(_currentTime,targetB.position.y); //target B
+        
+        _clip.SetCurve("", typeof(Transform), "localPosition.x", curveX);
+        _clip.SetCurve("", typeof(Transform), "localPosition.y", curveY);
+        
+        
+        _clip.wrapMode = WrapMode.PingPong;
+        _animation.AddClip(_clip, "PlatformAnimation");
         _animation.Play("PlatformAnimation");
     }
 }
