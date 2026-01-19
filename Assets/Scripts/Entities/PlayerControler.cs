@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;    
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float maxSpeed = 5f;
     [SerializeField][Range(0.0f, 1.0f)] private float airFriction = 1f;
     [SerializeField][Range(0.0f, 1.0f)] private float groundFriction = 1f;
     
@@ -49,13 +50,14 @@ public class PlayerControler : MonoBehaviour
             {
                 if (isGrounded) //Normal Jump
                 {
-                    rb.AddForceX(jumpHeight/10000, ForceMode2D.Impulse);
+                    rb.AddForceY(jumpHeight/10000, ForceMode2D.Impulse);
+                    _groundedCheck.currentTime = _groundedCheck.coyoteTime;
                 }
                 else if(_currentDoubleJumps>=1) //Use double Jump
                 {
                     _currentDoubleJumps = _currentDoubleJumps - 1;
                     rb.linearVelocityY = 0;
-                    rb.AddForceX(jumpHeight/10000, ForceMode2D.Impulse);
+                    rb.AddForceY(jumpHeight/10000, ForceMode2D.Impulse);
                 }
             }
         }
@@ -64,25 +66,10 @@ public class PlayerControler : MonoBehaviour
     void Update()
     {
         isGrounded = _groundedCheck.IsGrounded();
-        
+        Debug.Log(isGrounded);
         //Process Movement
 
-        if (isActive)
-        {
-            if (isGrounded)
-            {
-                if (horizontal != 0)
-                {
-                    rb.AddForceX(horizontal * (speed/10000) * Time.deltaTime, ForceMode2D.Impulse);
-                }
-                else if(rb.linearVelocityX> 0)
-                {
-                    rb.AddForceX((rb.linearVelocityX/(rb.linearVelocityX *rb.linearVelocityX)) * (speed/10000) * Time.deltaTime, ForceMode2D.Impulse);
-                }
-            }
-        }
-        
-        
+        Mouvement();
         
         // rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocityY);
         
@@ -114,6 +101,36 @@ public class PlayerControler : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll ;
             rb.linearVelocity = new Vector2(0, 0);
+        }
+    }
+
+    void Mouvement()
+    {
+        if (isActive)
+        {
+            if (horizontal != 0)
+            {
+                if (isGrounded)
+                {
+                    // rb.AddForceX(horizontal * (speed/10000) * groundFriction * Time.deltaTime, ForceMode2D.Impulse);
+                    rb.AddForceX(Mathf.Abs(rb.linearVelocityX * horizontal - maxSpeed) * speed * horizontal * Time.deltaTime / 10000, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rb.AddForceX(Mathf.Abs(rb.linearVelocityX * horizontal - maxSpeed) * speed * horizontal * Time.deltaTime / 10000, ForceMode2D.Impulse);
+                }
+            }
+            else
+            {
+                if (isGrounded)
+                {
+                    rb.linearVelocityX -= rb.linearVelocity.x * groundFriction;
+                }
+                else
+                {
+                    rb.linearVelocityX -= rb.linearVelocity.x * airFriction;
+                }
+            }
         }
     }
 }
