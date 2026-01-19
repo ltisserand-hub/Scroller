@@ -728,6 +728,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  coyoteTime: 0.1
+  currentTime: 0
 --- !u!95 &581635970
 Animator:
   serializedVersion: 7
