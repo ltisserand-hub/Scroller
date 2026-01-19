@@ -5150,6 +5150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2b77e17fce19b43bd83680b0ae813a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  tintPourcentage: 0.556
+  _camera: {fileID: 519420036}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
