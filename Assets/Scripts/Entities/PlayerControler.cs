@@ -42,12 +42,14 @@ public class PlayerControler : MonoBehaviour
             {
                 if (_groundedCheck.IsGrounded())
                 {
-                    rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpHeight);
+                    // rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpHeight);
+                    rb.AddForce(new Vector2(0,jumpHeight/10000), ForceMode2D.Impulse);
                 }
                 else if(_currentDoubleJumps>=1)
                 {
                     _currentDoubleJumps = _currentDoubleJumps - 1;
-                    rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpHeight);
+                    rb.linearVelocityY = 0;
+                    rb.AddForce(new Vector2(0,jumpHeight/10000), ForceMode2D.Impulse);
                 }
             }
         }
@@ -64,7 +66,7 @@ public class PlayerControler : MonoBehaviour
                 _currentDoubleJumps = maxDoubleJumps;
             }
         }
-        
+        print(rb.linearVelocity);
         int aHorizontal = (int)rb.linearVelocity.x;
         _animator.SetInteger("Horizontal", aHorizontal);
         _animator.SetBool("Grounded", _groundedCheck.IsGrounded());
