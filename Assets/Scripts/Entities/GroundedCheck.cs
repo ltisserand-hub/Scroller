@@ -7,7 +7,7 @@ public class GroundedCheck : MonoBehaviour
     public LayerMask groundLayer;
     public float coyoteTime;
     public float currentTime;
-    
+
     public bool IsGrounded()
     {
         if (Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
@@ -15,16 +15,17 @@ public class GroundedCheck : MonoBehaviour
             currentTime = 0f;
             return true;
         }
-        else if(currentTime < coyoteTime)
+        else if (currentTime < coyoteTime)
         {
             currentTime += Time.deltaTime;
             return true;
         }
+
         return false;
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
+        Gizmos.DrawWireCube(transform.position - transform.up * castDistance, boxSize);
     }
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -8,18 +7,17 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float maxSpeed = 5f;
     [SerializeField] [Range(0.0f, 1.0f)] private float airFriction = 1f;
     [SerializeField] [Range(0.0f, 1.0f)] private float groundFriction = 1f;
-
-
-
+    
     [SerializeField] private float jumpHeight = 5;
     [SerializeField] private int maxDoubleJumps;
+    [SerializeField] private float jumpBuffer;
+    
     [SerializeField] public bool isActive = true;
-
-
-
+    
     private bool isGrounded;
     private int _currentDoubleJumps;
     private float horizontal;
+    private float _lastJumpBuffer;
     private GroundedCheck _groundedCheck;
     private Animator _animator;
 
@@ -59,18 +57,27 @@ public class PlayerControler : MonoBehaviour
                     rb.linearVelocityY = 0;
                     rb.AddForceY(jumpHeight / 10000, ForceMode2D.Impulse);
                 }
+                else
+                {
+                    _lastJumpBuffer = Time.time;
+                }
             }
         }
     }
 
     void Update()
     {
+        if (isGrounded != _groundedCheck.IsGrounded() && _lastJumpBuffer-Time.time <= jumpBuffer && _lastJumpBuffer != 0f)
+        {
+            rb.linearVelocityY = 0;
+            rb.AddForceY(jumpHeight / 10000, ForceMode2D.Impulse);
+            _lastJumpBuffer = 0f;
+        }
+        
         isGrounded = _groundedCheck.IsGrounded();
         //Process Movement
 
         Mouvement();
-
-        // rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocityY);
 
         //Double Jump Reset
 
