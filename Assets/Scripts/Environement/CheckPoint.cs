@@ -14,13 +14,18 @@ public class CheckPoint : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag == "Player" || isActive)
+        
+        if (player.GetComponent<DeathRespawn>().respawnPosition != respawnPos)
         {
-            if (player.GetComponent<DeathRespawn>().respawnPosition != respawnPos)
+            if (collision.gameObject.tag == "Player" || isActive) 
             {
                 player.GetComponent<DeathRespawn>().respawnPosition = new Vector3(respawnPos.x, respawnPos.y, 0);
                 //play animation
             }
+        }
+        else
+        {
+            
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class CameraFollow : MonoBehaviour
 { 
@@ -7,7 +8,11 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Vector2 velocityOffsetMultiplier;
     [SerializeField] private Rigidbody2D velocityOffset;
-    
+
+    private void Start()
+    {
+        transform.position = target.position + offset + new Vector3(velocityOffset.linearVelocityX*velocityOffsetMultiplier.x, velocityOffset.linearVelocityY*velocityOffsetMultiplier.y);
+    }
 
     void FixedUpdate()
     {
