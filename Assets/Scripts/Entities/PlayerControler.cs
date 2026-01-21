@@ -67,7 +67,8 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
-        if (isGrounded != _groundedCheck.IsGrounded() && _lastJumpBuffer-Time.time <= jumpBuffer && _lastJumpBuffer != 0f)
+        print(_lastJumpBuffer - Time.time);
+        if (isGrounded != _groundedCheck.IsGrounded() && Time.time  - _lastJumpBuffer <= jumpBuffer && _lastJumpBuffer > 0f )
         {
             rb.linearVelocityY = 0;
             rb.AddForceY(jumpHeight / 10000, ForceMode2D.Impulse);

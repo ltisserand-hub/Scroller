@@ -6102,7 +6102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6909157762840288403, guid: fdbcddf133adaa042a853565d693d3ba, type: 3}
       propertyPath: jumpBuffer
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6909157762840288403, guid: fdbcddf133adaa042a853565d693d3ba, type: 3}
       propertyPath: airFriction
