@@ -704,10 +704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
   rb: {fileID: 581635961}
-  speed: 4
-  maxSpeed: 5
-  airFriction: 1
-  groundFriction: 1
+  speed: 5
+  maxSpeed: 7
+  airFriction: 0.45
+  groundFriction: 0.9
   jumpHeight: 7.5
   maxDoubleJumps: 1
   isActive: 1
@@ -6425,9 +6425,9 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 581635964}
   - {fileID: 519420032}
   - {fileID: 1708243673}
-  - {fileID: 581635964}
   - {fileID: 737691034}
   - {fileID: 1516842003}
   - {fileID: 2090932121}

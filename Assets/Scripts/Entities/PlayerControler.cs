@@ -112,12 +112,11 @@ public class PlayerControler : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    // rb.AddForceX(horizontal * (speed/10000) * groundFriction * Time.deltaTime, ForceMode2D.Impulse);
-                    rb.AddForceX(Mathf.Abs(rb.linearVelocityX * horizontal - maxSpeed) * speed * horizontal * Time.deltaTime / 10000, ForceMode2D.Impulse);
+                    rb.AddForceX(Mathf.Abs(rb.linearVelocityX * horizontal - maxSpeed ) * speed * horizontal * Time.deltaTime * groundFriction / 10000, ForceMode2D.Impulse);
                 }
                 else
                 {
-                    rb.AddForceX(Mathf.Abs(rb.linearVelocityX * horizontal - maxSpeed) * speed * horizontal * Time.deltaTime / 10000, ForceMode2D.Impulse);
+                    rb.AddForceX(Mathf.Abs(rb.linearVelocityX * horizontal - maxSpeed) * speed * horizontal * Time.deltaTime * airFriction / 10000, ForceMode2D.Impulse);
                 }
             }
             else
