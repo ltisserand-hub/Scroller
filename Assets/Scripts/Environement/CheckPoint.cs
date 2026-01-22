@@ -18,7 +18,6 @@ public class CheckPoint : MonoBehaviour
         {
             script.enabled = false;
             GetComponent<SpriteRenderer>().color = Color.white;
-            print("toggle off");
         }
     }
 
