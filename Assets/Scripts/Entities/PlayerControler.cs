@@ -67,7 +67,6 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
-        print(_lastJumpBuffer - Time.time);
         if (isGrounded != _groundedCheck.IsGrounded() && Time.time  - _lastJumpBuffer <= jumpBuffer && _lastJumpBuffer > 0f )
         {
             rb.linearVelocityY = 0;

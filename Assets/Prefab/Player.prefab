@@ -144,7 +144,7 @@ MonoBehaviour:
   groundFriction: 0.9
   jumpHeight: 7.5
   maxDoubleJumps: 0
-  jumpBuffer: 0
+  jumpBuffer: 0.2
   isActive: 1
 --- !u!114 &3554626933771145261
 MonoBehaviour:
