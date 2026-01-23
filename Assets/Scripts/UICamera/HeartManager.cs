@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
+
 public class HeartManager : MonoBehaviour
 {
     [SerializeField] [Range(0, 40)] private int maxHealth; //1 visual heart is considered as 2 HP
@@ -17,13 +19,15 @@ public class HeartManager : MonoBehaviour
     //3 = Half Empty Heart
     //4 = Half Full Heart with empty
     //5 = Temp Heart
-    
+    [SerializeField] public GameObject heartPrefab;
     private Image _image;
     private List<GameObject> _hearts;
     private Vector3 healthMemory;
     void Start()
     {
         _image = gameObject.GetComponent<Image>();
+        GameObject heart;
+        heart = Instantiate(heartPrefab);
         
     }
 
@@ -32,10 +36,10 @@ public class HeartManager : MonoBehaviour
     {
         if (new Vector3(health, maxHealth, tempHealth) != healthMemory)
         {
-            Debug.Log("boo");
-            
-            
-            
+            /*while (_hearts.Count < maxHealth / 2)
+            {
+                _hearts.Add(Instantiate(heartPrefab, Vector3.zero, Quaternion.identity));
+            }*/
             
             
             healthMemory = new Vector3(health, maxHealth, tempHealth);

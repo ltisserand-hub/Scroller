@@ -6087,7 +6087,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1870623028}
   - component: {fileID: 1870623030}
-  - component: {fileID: 1870623029}
   - component: {fileID: 1870623031}
   m_Layer: 5
   m_Name: HeartManager
@@ -6115,36 +6114,6 @@ RectTransform:
   m_AnchoredPosition: {x: 25, y: -148}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1870623029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870623027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -6127141702526261921, guid: 8e86878e83506114a903703a815ba763, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1870623030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6165,8 +6134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1220e16bd6e53ea45824b2656abef61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxHealth: 20
-  health: 19
+  maxHealth: 2
+  health: 2
   tempHealth: 1
   heartsPerColumn: 5
   offSet: {x: 125, y: 125}
@@ -6177,6 +6146,7 @@ MonoBehaviour:
   - {fileID: -1686263313, guid: 8e86878e83506114a903703a815ba763, type: 3}
   - {fileID: -1391021141, guid: 8e86878e83506114a903703a815ba763, type: 3}
   - {fileID: 2047351546, guid: 8e86878e83506114a903703a815ba763, type: 3}
+  heartPrefab: {fileID: 8675927843738879062, guid: 7a5635af1d56280478a659af1fd5e04d, type: 3}
 --- !u!1 &1994304145
 GameObject:
   m_ObjectHideFlags: 0
