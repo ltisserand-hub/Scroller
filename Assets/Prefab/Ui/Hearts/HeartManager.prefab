@@ -60,7 +60,7 @@ MonoBehaviour:
   maxHealth: 20
   health: 14
   heartsPerColumn: 7
-  offSet: {x: 125, y: -125, z: 0}
+  offSet: {x: 60, y: -60, z: 0}
   hearts:
   - {fileID: -6127141702526261921, guid: 8e86878e83506114a903703a815ba763, type: 3}
   - {fileID: -1572042411, guid: 8e86878e83506114a903703a815ba763, type: 3}
