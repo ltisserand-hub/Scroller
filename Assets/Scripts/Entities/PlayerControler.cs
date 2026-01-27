@@ -3,15 +3,17 @@ using UnityEngine.InputSystem;
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;
+    [Header("Speed Settings")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float maxSpeed = 5f;
+    [Header("Friction Settings")]
     [SerializeField] [Range(0.0f, 1.0f)] private float airFriction = 1f;
     [SerializeField] [Range(0.0f, 1.0f)] private float groundFriction = 1f;
-    
+    [Header("Jump Settings")]
     [SerializeField] private float jumpHeight = 5;
-    [SerializeField] private int maxDoubleJumps;
+    [SerializeField] [Range(0,5)] private int maxDoubleJumps;
     [SerializeField] private float jumpBuffer;
-    
+    [Header("Active")]
     [SerializeField] public bool isActive = true;
     
     private bool isGrounded;

@@ -4,11 +4,13 @@ using Image = UnityEngine.UI.Image;
 
 public class HeartManager : MonoBehaviour
 {
+    [Header("Health Settings")]
     [SerializeField] [Range(0, 40)] private int maxHealth; //1 visual heart is considered as 2 HP
     [SerializeField] [Range(0, 40)] int health;
+    [Header("Render Settings")]
     [SerializeField] [Range(1, 10)] int heartsPerColumn; //Counts the visual hearts
     [SerializeField] private Vector3 offSet;
-    
+    [Header("Sprite")]
     [SerializeField] private List<Sprite> hearts;
     //6 images required in this order:
     //0 = Full Heart

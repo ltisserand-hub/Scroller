@@ -1,12 +1,15 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GroundedCheck : MonoBehaviour
 {
+    [Header("HitBox Settings")]
     public Vector2 boxSize;
     public float castDistance;
     public LayerMask groundLayer;
+    [Header("Gameplay Settings")]
     public float coyoteTime;
-    public float currentTime;
+    [DoNotSerialize] public float currentTime;
 
     public bool IsGrounded()
     {

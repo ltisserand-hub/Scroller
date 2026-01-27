@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PlatformStick : MonoBehaviour
 {
+    [Header("Hitbox Settings")]
     [SerializeField] float castDistance;
     [SerializeField] private Vector2 boxSize;
+    [Header("Target Settings")]
     [SerializeField] private Transform target;
     [SerializeField] private LayerMask layer;
     

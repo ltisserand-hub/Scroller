@@ -16,7 +16,10 @@ public class CheckPoint : MonoBehaviour
     {
         if (script.enabled && player.GetComponent<DeathRespawn>().respawnPosition != respawnPos )
         {
-            script.enabled = false;
+            if (script != null)
+            {
+                script.enabled = false;
+            }
             GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
@@ -30,7 +33,10 @@ public class CheckPoint : MonoBehaviour
             {
                 player.GetComponent<DeathRespawn>().respawnPosition = new Vector3(respawnPos.x, respawnPos.y, 0);
                 //play animation
-                script.enabled = true;
+                if (script != null)
+                {
+                    script.enabled = true;
+                }
             }
         }
     }

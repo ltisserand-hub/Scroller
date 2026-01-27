@@ -1,8 +1,10 @@
 using UnityEngine;
 public class MovingTargetValues : MonoBehaviour
 {
+    [Header("Targets")]
     [SerializeField] Transform targetA;
     [SerializeField] Transform targetB;
+    [Header("Settings")]
     [SerializeField] float speed;
     [SerializeField] float waitTime;
     [SerializeField] bool easeInOut = true;

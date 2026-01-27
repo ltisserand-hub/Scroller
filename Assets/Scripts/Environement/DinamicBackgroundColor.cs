@@ -3,9 +3,10 @@ using UnityEngine;
 public class DinamicBackgroundColor : MonoBehaviour
 {
     [SerializeField] float transitionTime = 5f;
+    [Header("Colors")]
     [SerializeField] Color firstColor = Color.white;
     [SerializeField] Color secondColor = Color.black;
-    [SerializeField] Color currentColor;
+    private Color currentColor;
     private float transitionCurrentTime = 0f;
     void Update()
     {

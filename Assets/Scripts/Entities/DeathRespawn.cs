@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class DeathRespawn : MonoBehaviour
 {
+    [Header("General Settings")]
     [SerializeField] public Vector2 respawnPosition;
     [SerializeField] int respawnTime = 100;
+    [Header("HitBox Settings")]
     [SerializeField] public Vector2 boxSize;
     [SerializeField] public float castDistance;
     [SerializeField] public LayerMask layer;
+    [Header("Visual Settings")]
     [SerializeField] private Color Tint;
     private int currentTime = 0;
     private Transform trans;
