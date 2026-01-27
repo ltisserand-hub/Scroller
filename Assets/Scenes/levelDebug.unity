@@ -6320,6 +6320,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2084672303}
     m_Modifications:
+    - target: {fileID: 3604900642473647063, guid: 915e373a18a887a4ca811d36fc8e08ae, type: 3}
+      propertyPath: health
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604900642473647063, guid: 915e373a18a887a4ca811d36fc8e08ae, type: 3}
+      propertyPath: maxHealth
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604900642473647063, guid: 915e373a18a887a4ca811d36fc8e08ae, type: 3}
+      propertyPath: heartsPerColumn
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6523279240290564932, guid: 915e373a18a887a4ca811d36fc8e08ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0
