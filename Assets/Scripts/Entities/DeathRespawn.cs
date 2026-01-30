@@ -17,6 +17,7 @@ public class DeathRespawn : MonoBehaviour
 
     public void Respawn()
     {
+        
         //play death animation
         currentTime = 1;
         GetComponent<SpriteRenderer>().color = Tint;

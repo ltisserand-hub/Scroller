@@ -544,8 +544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DinamicBackgroundColor
   transitionTime: 20
-  firstColor: {r: 1, g: 0.7058824, b: 0.72333556, a: 1}
-  secondColor: {r: 0.7097411, g: 0.7028302, b: 1, a: 1}
+  firstColor: {r: 1, g: 0.75, b: 0.762987, a: 1}
+  secondColor: {r: 0.7470519, g: 0.740566, b: 1, a: 1}
 --- !u!1 &449179744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,8 +1132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.844}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.9976, y: -3.9998}
-  m_SizeDelta: {x: 2165.3591, y: 1570.3721}
+  m_AnchoredPosition: {x: -7.1221, y: 26.6227}
+  m_SizeDelta: {x: 2154.8, y: 1616.1294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988790327
 MonoBehaviour:
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.2
+  m_PixelsPerUnitMultiplier: 0.175
 --- !u!222 &1988790328
 CanvasRenderer:
   m_ObjectHideFlags: 0
