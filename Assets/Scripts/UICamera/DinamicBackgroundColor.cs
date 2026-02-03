@@ -4,15 +4,12 @@ using UnityEngine;
 public class DinamicBackgroundColor : MonoBehaviour
 {
     [SerializeField] float transitionTime = 5f;
-    [Header("Colors")]
-    public List<Color> color;
-    private Color currentColor;
+    public Gradient colors;
     private float transitionCurrentTime = 0f;
     void Update()
     {
         transitionCurrentTime = Mathf.PingPong(Time.unscaledTime,transitionTime);
-        currentColor = Color.Lerp(color[0], color[1], transitionCurrentTime/transitionTime);
-        Camera.main.backgroundColor = currentColor;
+        Camera.main.backgroundColor = colors.Evaluate(transitionCurrentTime / transitionTime);
       
     }
 }

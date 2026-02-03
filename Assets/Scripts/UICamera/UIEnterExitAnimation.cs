@@ -11,7 +11,7 @@ public class UIEnterExitAnimation : MonoBehaviour
     [SerializeField] private Vector2 direction;
     [SerializeField] private float speed;
     [Header("Color")]
-    [SerializeField] private List<Color> color;
+    [SerializeField] private Gradient color;
     [SerializeField] private GameObject _camera;
     
     private Vector2 _target;
@@ -21,7 +21,7 @@ public class UIEnterExitAnimation : MonoBehaviour
         StartCoroutine(SmoothMove(Vector2.zero, new Vector2((float)Screen.height * direction.x * 2, (float)Screen.width * direction.y * 2), speed));
         if (_camera != null)
         {
-            _camera.GetComponent<DinamicBackgroundColor>().color = color;
+            _camera.GetComponent<DinamicBackgroundColor>().colors = color;
         }
     }
     IEnumerator SmoothMove(Vector2 target , Vector2 startingPosition, float duration, bool disable = false)
