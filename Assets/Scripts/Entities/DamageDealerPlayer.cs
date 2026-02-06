@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class DamageDealerPlayer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float _damage;
+    [SerializeField] private bool _isTrueDamage;
+    
+    void OnTriggerStay2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            try
+            {
+                collision.gameObject.GetComponent<PlayerHealthController>().TakeDamage(_damage, _isTrueDamage);
+            }
+            catch
+            {
+                Debug.LogWarning("Collision With Player with no player health controller");
+            }
+        }
     }
 }
