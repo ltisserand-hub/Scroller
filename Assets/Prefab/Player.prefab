@@ -146,7 +146,7 @@ MonoBehaviour:
   groundFriction: 0.9
   jumpHeight: 7.5
   maxDoubleJumps: 0
-  jumpBuffer: 0.2
+  jumpBuffer: 0.15
   isActive: 1
 --- !u!114 &3554626933771145261
 MonoBehaviour:
@@ -392,18 +392,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   maxHealth: 20
-  health: 20
+  health: 19.9
   defense: 10
   damageResistance: 10
-  immunityDuration: 0.5
+  immunityDuration: 1
   immune: 0
   respawnPosition: {x: 0, y: 0}
-  respawnTime: 2
+  respawnTime: 0.75
   _deathTint: {r: 1, g: 0, b: 0, a: 1}
   _immunityGradient:
     serializedVersion: 2
-    key0: {r: 0.8349056, g: 1, b: 0.998332, a: 1}
-    key1: {r: 0.6839622, g: 1, b: 1, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0.5330188, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}

@@ -69,9 +69,6 @@ public class PlayerHealthController : MonoBehaviour
             else
             {
                 health -= Mathf.Clamp(_damage - defense, 0,10000 )*(1-(damageResistance/100));
-                print(Mathf.Clamp(_damage - defense, 0,10000 )*(1-(damageResistance/100)));
-                print(Mathf.Clamp(_damage - defense, 0,10000 ));
-                print(1 - (damageResistance / 100));
             }
             _heartManager.UpdateHealth((int)MathF.Ceiling(health), (int)MathF.Ceiling(maxHealth));
             if (health > 0)
