@@ -73,7 +73,7 @@ public class PlayerHealthController : MonoBehaviour
                 print(Mathf.Clamp(_damage - defense, 0,10000 ));
                 print(1 - (damageResistance / 100));
             }
-            _heartManager.UpdateHealth((int)health, (int)maxHealth);
+            _heartManager.UpdateHealth((int)MathF.Ceiling(health), (int)MathF.Ceiling(maxHealth));
             if (health > 0)
             {
                 StartCoroutine(ImmunityFrames());
@@ -100,7 +100,7 @@ public class PlayerHealthController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
-            _heartManager.UpdateHealth((int)health, (int)maxHealth);
+            _heartManager.UpdateHealth((int)MathF.Ceiling(health), (int)MathF.Ceiling(maxHealth));
         }
     }
 }
