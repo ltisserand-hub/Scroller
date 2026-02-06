@@ -58,17 +58,17 @@ public class PlayerHealthController : MonoBehaviour
         _playerControler.isActive = true;
     }
     
-    public void TakeDamage(float _damage, bool _trueDamage = false ) //normal damage formula 
+    public void TakeDamage(float damage, bool trueDamage = false ) //normal damage formula 
     {
         if (!immune && _playerControler.isActive)
         {
-            if (_trueDamage)
+            if (trueDamage)
             {
-                health -= _damage;
+                health -= damage;
             }
             else
             {
-                health -= Mathf.Clamp(_damage - defense, 0,10000 )*(1-(damageResistance/100));
+                health -= Mathf.Clamp(damage - defense, 0,10000 )*(1-(damageResistance/100));
             }
             _heartManager.UpdateHealth((int)MathF.Ceiling(health), (int)MathF.Ceiling(maxHealth));
             if (health > 0)
